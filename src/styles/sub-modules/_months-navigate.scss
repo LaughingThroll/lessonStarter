@@ -1,0 +1,16 @@
+.months-navigate {
+  display: flex;
+  justify-content: space-between;
+  max-width: 226px;
+  width: 100%;
+
+  &__button {
+    padding: 5px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+}

@@ -1,11 +1,5 @@
-html,
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-  line-height: 1.3em;
-}
-
-.calendarBar {
-  display: flex;
-  justify-content: center;
-}
+@import './utils/normalize';
+@import './utils/variables';
+@import './utils/global';
+@import './modules/calendar';
+@import './sub-modules/months-navigate';
