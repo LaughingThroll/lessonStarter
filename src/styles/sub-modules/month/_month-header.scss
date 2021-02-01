@@ -1,0 +1,35 @@
+.month-header {
+  display: grid;
+  grid-template-columns: 260px repeat(32, 1fr);
+
+  &__cell {
+    &:first-child {
+      border: 0;
+    }
+
+    &:not(:first-child) {
+      padding: 12px 7px 7px;
+
+      & > * {
+        display: block;
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 400;
+    }
+  }
+
+  &__day {
+    font-weight: 400;
+  }
+
+  &__number {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+}

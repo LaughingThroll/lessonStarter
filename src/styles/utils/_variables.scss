@@ -1,10 +1,16 @@
-$main-color: #454545;
-
-$white: #fff;
 $black: #000;
+$white: #fff;
+$apple: #48ba46;
+$gray: rgba(126, 126, 126, 0.3);
+$gallery: #f0f0f0;
+
+$main-color: $black;
+$main-border: $gray;
+$button--main: $apple;
+$weekend: $gallery;
 
 // FONT
-$main-font: 'Open Sans', sans-serif;
+$main-font: "Open Sans", sans-serif;
 // + or - size * on number [.5, .75, 1.25, 1.5]
 $main-fz: 12px;
 $main-line-height: 18px;

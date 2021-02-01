@@ -2,4 +2,8 @@
 @import './utils/variables';
 @import './utils/global';
 @import './modules/calendar';
-@import './sub-modules/months-navigate';
+@import './sub-modules/month/month-navigate';
+@import './sub-modules/button';
+@import './sub-modules/icons';
+@import './sub-modules/month/month-header';
+@import './sub-modules/weekend';
