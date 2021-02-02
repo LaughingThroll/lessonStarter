@@ -15,11 +15,19 @@
       }
     }
 
+    &:not(:last-child) {
+      border-right: 0;
+      border-bottom: 0;
+    }
+
     &:last-child {
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: 400;
+      border-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -28,8 +36,6 @@
   }
 
   &__number {
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 600;
+    @extend %font-bold;
   }
 }

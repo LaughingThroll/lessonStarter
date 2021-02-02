@@ -1,0 +1,10 @@
+.users {
+  display: flex;
+  align-items: center;
+  color: $users-count;
+
+  &__count {
+    display: inline-block;
+    margin-left: 3px;
+  }
+}

@@ -30,20 +30,26 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+th,
+td {
   margin: 0;
   padding: 0;
 }
 
+tbody,
 thead,
 tfoot,
 tr,
-th {
+th,
+td {
   display: block;
 }
 
+td,
 th {
-  padding: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 input,

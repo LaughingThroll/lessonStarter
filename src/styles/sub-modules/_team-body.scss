@@ -1,0 +1,28 @@
+.team-body {
+  display: grid;
+  grid-template-columns: 260px repeat(32, 1fr);
+
+  &__cell {
+    &:not(:first-child) {
+      border-top: 1px solid $main-border;
+    }
+
+    &:not(:last-child) {
+      border-right: 0;
+    }
+
+    &:last-child {
+      @extend %font-bold;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &:not(:last-child) {
+    .team-body__cell {
+      border-bottom: 0;
+    }
+  }
+}

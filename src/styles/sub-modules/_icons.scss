@@ -2,4 +2,12 @@
   &-plus {
     stroke: $white;
   }
+
+  &-users {
+    opacity: 0.5;
+  }
+
+  &-arrow-up {
+    transform: rotate(-90deg);
+  }
 }

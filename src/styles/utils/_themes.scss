@@ -1,0 +1,21 @@
+@mixin themes($themes-name, $themes-main, $themes-bg, $themes-text-color) {
+  .#{$themes-name} {
+    .team {
+      border-left-color: $themes-main;
+
+      &__weekend-percent {
+        background-color: $themes-main;
+        color: $themes-text-color;
+      }
+    }
+
+    .team-body:first-child {
+      background-color: $themes-bg;
+    }
+  }
+}
+
+@include themes(melrose-theme, $melrose, $melrose-bg, $white);
+@include themes(malibu-theme, $malibu, $malibu-bg, $white);
+@include themes(mona-lisa-theme, $mona-lisa, $mona-lisa-bg, $white);
+@include themes(atomic-tangerine-theme, $atomic-tangerine, $atomic-tangerine-bg, $white);
