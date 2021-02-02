@@ -1,0 +1,11 @@
+.calendar-table {
+  width: 100%;
+
+  &__header {
+    .month-header:only-child {
+      & > * {
+        border-bottom: 1px solid $main-border;
+      }
+    }
+  }
+}

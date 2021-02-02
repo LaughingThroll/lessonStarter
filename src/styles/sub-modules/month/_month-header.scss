@@ -1,6 +1,5 @@
 .month-header {
   display: grid;
-  grid-template-columns: 260px repeat(32, 1fr);
 
   &__cell {
     &:first-child {

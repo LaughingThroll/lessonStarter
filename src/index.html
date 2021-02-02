@@ -11,104 +11,10 @@
 </head>
 
 <body>
-  <main id="appRoot">
-    <div class="container">
-
-      <table class="calendar">
-        <caption class="calendar__caption">
-          <div class="month-navigate">
-            <button class="month-navigate__button">
-              <svg class="month-navigate__svg" id="icon-arrow-left" width="9" height="8" viewBox="0 0 9 8">
-                <path
-                  d="M0.646446 3.64645C0.451184 3.84171 0.451184 4.15829 0.646446 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646446 3.64645ZM9 3.5L1 3.5V4.5L9 4.5V3.5Z" />
-              </svg>
-            </button>
-            <div class="month-navigate__text">September 2020</div>
-            <button class="month-navigate__button">
-              <svg class="month-navigate__svg" id="icon-arrow-right" width="9" height="8" viewBox="0 0 9 8">
-                <path
-                  d="M8.35355 4.35355C8.54882 4.15829 8.54882 3.84171 8.35355 3.64645L5.17157 0.464467C4.97631 0.269205 4.65973 0.269205 4.46447 0.464467C4.2692 0.659729 4.2692 0.976311 4.46447 1.17157L7.29289 4L4.46447 6.82843C4.2692 7.02369 4.2692 7.34027 4.46447 7.53553C4.65973 7.7308 4.97631 7.7308 5.17157 7.53553L8.35355 4.35355ZM-8.74228e-08 4.5L8 4.5L8 3.5L8.74228e-08 3.5L-8.74228e-08 4.5Z" />
-              </svg>
-            </button>
-          </div>
-        </caption>
-
-        <thead class="calendar__header">
-          <tr class="month-header">
-            <th class="month-header__cell">
-              <button class="button">
-                <svg class="button__svg" id="icon-plus" width="13" height="13" viewBox="0 0 13 13">
-                  <line x1="6.5" y1="6.10171e-05" x2="6.5" y2="13.0001" />
-                  <line x1="13" y1="6.50006" y2="6.50006" />
-                </svg>
-                Add Vacation</button>
-            </th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Mo</span><span
-                class="month-header__number">1</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Tu</span><span
-                class="month-header__number">2</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">We</span><span
-                class="month-header__number">3</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Th</span><span
-                class="month-header__number">4</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Fr</span><span
-                class="month-header__number">5</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">St</span><span
-                class="month-header__number">6</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">Su</span><span
-                class="month-header__number">7</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Mo</span><span
-                class="month-header__number">8</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Tu</span><span
-                class="month-header__number">9</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">We</span><span
-                class="month-header__number">10</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Th</span><span
-                class="month-header__number">11</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Fr</span><span
-                class="month-header__number">12</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">St</span><span
-                class="month-header__number">13</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">Su</span><span
-                class="month-header__number">14</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Mo</span><span
-                class="month-header__number">15</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Tu</span><span
-                class="month-header__number">16</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">We</span><span
-                class="month-header__number">17</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Th</span><span
-                class="month-header__number">18</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Fr</span><span
-                class="month-header__number">19</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">St</span><span
-                class="month-header__number">20</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">Su</span><span
-                class="month-header__number">21</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Mo</span><span
-                class="month-header__number">22</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Tu</span><span
-                class="month-header__number">23</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">We</span><span
-                class="month-header__number">24</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Th</span><span
-                class="month-header__number">25</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Fr</span><span
-                class="month-header__number">26</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">St</span><span
-                class="month-header__number">27</span></th>
-            <th class="calendar__border month-header__cell cell-gray"><span class="month-header__day">Su</span><span
-                class="month-header__number">28</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Su</span><span
-                class="month-header__number">29</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Su</span><span
-                class="month-header__number">30</span></th>
-            <th class="calendar__border month-header__cell"><span class="month-header__day">Su</span><span
-                class="month-header__number">31</span></th>
-            <th class="calendar__border month-header__cell cell-gray"> Sum </th>
-          </tr>
-        </thead>
-
+  <main class="calendar container" id="appRoot"></main>
+  
+  
+  <!-- <table class="calendar">
         <tbody class="calendar__body malibu-theme">
           <tr class="team-body">
             <td class="calendar__border team team--common team-body__cell">
@@ -217,10 +123,6 @@
             <td class="calendar__border team-body__cell"></td>
             <td class="calendar__border team-body__cell cell-gray"></td>
           </tr>
-
-
-
-
 
           <tr class="team-body">
             <td class="calendar__border team team--member team-body__cell">
@@ -383,10 +285,12 @@
         </tbody>
 
 
-      </table>
+      </table> 
 
-    </div>
-  </main>
+    </div> -->
+  
+  
+  
   <!-- !TODO: you should get something like this:
     <main id="appRoot">
       <table>
