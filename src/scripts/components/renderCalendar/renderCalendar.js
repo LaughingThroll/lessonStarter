@@ -1,6 +1,6 @@
 import renderCalendarHead from './renderCalendarHead';
 import renderCalendarBody from './renderCalendarBody';
-import { daysInMonth } from '../../utils/date';
+import { daysInMonth } from '@utils/date';
 
 const renderCalendar = ({ appElement, currentDate }) => {
   const calendarContainer = document.createElement("table");
