@@ -1,16 +1,16 @@
 @mixin themes($themes-name, $themes-main, $themes-bg, $themes-text-color) {
   .#{$themes-name} {
-    .team {
-      border-left-color: $themes-main;
+    border-left-color: $themes-main;
 
+    &.#{$themes-name}--background {
+      background-color: $themes-bg;
+    }
+
+    .team {
       &__weekend-percent {
         background-color: $themes-main;
         color: $themes-text-color;
       }
-    }
-
-    .team-body:first-child {
-      background-color: $themes-bg;
     }
   }
 }

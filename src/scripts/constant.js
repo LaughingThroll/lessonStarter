@@ -1,0 +1,1 @@
+export const WIDTH_BORDER_LEFT = 4;
