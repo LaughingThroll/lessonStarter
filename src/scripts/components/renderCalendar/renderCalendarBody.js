@@ -6,12 +6,14 @@ import teamBodyCell from '../teamBodyCell';
 
 import { formatDayInBinaryString } from '@utils/date';
 
+import { FIRST_COLUMN_WIDTH } from '@constant';
+
 const renderCalendarBody = ({ currentDate, allDaysInMonth }) => {
   const calendarBody = document.createElement("tbody");
   calendarBody.classList.add('calendar-table__body', 'table-body');
 
   const teamBody = `
-  <tr class="team-body malibu-theme malibu-theme--background" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+  <tr class="team-body malibu-theme malibu-theme--background" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--common team-body__cell calendar__border">
       <span class="team__name">Front-end</span>
       <div class="team__other">
@@ -24,34 +26,34 @@ const renderCalendarBody = ({ currentDate, allDaysInMonth }) => {
       </div>
     </td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
-    <td class="team-body__cell cell-gray calendar__border">4</td>
+    <td class="team-body__cell cell-gray calendar__border"></td>
     </tr>
 
-    <tr class="team-body malibu-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body malibu-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body malibu-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body malibu-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body malibu-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body malibu-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body malibu-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body malibu-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body team-body--intendent melrose-theme melrose-theme--background" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body team-body--intendent melrose-theme melrose-theme--background" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--common team-body__cell calendar__border">
       <span class="team__name">Front-end</span>
       <div class="team__other">
@@ -64,34 +66,34 @@ const renderCalendarBody = ({ currentDate, allDaysInMonth }) => {
       </div>
     </td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
-    <td class="team-body__cell cell-gray calendar__border">4</td>
+    <td class="team-body__cell cell-gray calendar__border"></td>
     </tr>
 
-    <tr class="team-body melrose-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body melrose-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body melrose-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body melrose-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body melrose-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body melrose-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body melrose-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body melrose-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
     
-    <tr class="team-body team-body--intendent mona-lisa-theme mona-lisa-theme--background" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body team-body--intendent mona-lisa-theme mona-lisa-theme--background" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--common team-body__cell calendar__border">
       <span class="team__name">deisgners</span>
       <div class="team__other">
@@ -104,23 +106,23 @@ const renderCalendarBody = ({ currentDate, allDaysInMonth }) => {
       </div>
     </td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
-    <td class="team-body__cell cell-gray calendar__border">4</td>
+    <td class="team-body__cell cell-gray calendar__border"></td>
     </tr>
 
-    <tr class="team-body mona-lisa-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body mona-lisa-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
-    <tr class="team-body mona-lisa-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body mona-lisa-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
     </tr>
 
 
-    <tr class="team-body mona-lisa-theme" style="grid-template-columns: 260px repeat(${allDaysInMonth + 1}, 1fr);">
+    <tr class="team-body mona-lisa-theme" style="grid-template-columns: ${ FIRST_COLUMN_WIDTH }px repeat(${allDaysInMonth + 1}, 1fr);">
     <td class="team team--member team-body__cell calendar__border"><span class="team__name">Nick</span></td>
     ${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(''))}
     <td class="team-body__cell cell-gray calendar__border">4</td>
