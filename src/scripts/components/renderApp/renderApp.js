@@ -6,37 +6,21 @@ const renderApp = () => {
 
   const currentDate = new Date();
   let month = new Date().getMonth();
-  console.log(month);
-  // 0 - jan
-  // 1 - feb
-  // 2 - march
-  // 3 - april
-  // 4 - may
-  // 5 - june
-  // 6 - july
-  // 7 - august
-  // 8 - september
-  // 9 - october
-  // 10 - november
-  // 11 - december 
-  const minusMonth = () => {
-    if (month > 0) {
-      month--;
-      currentDate.setMonth(month);
-      update();
-    }
+
+  const prevMonth = () => {
+    currentDate.setMonth(--month);
+    update();
+    if (month < 0) month = 11;
   };
 
-  const plusMonth = () => {
-    if (month < 11) {
-      month++;
-      currentDate.setMonth(month);
-      update();
-    } 
+  const nextMonth = () => {
+    currentDate.setMonth(++month);
+    update();
+    if (month > 11) month = 0;
   };
 
   const render = () => {
-    renderBar({ appElement, currentDate, minusMonth, plusMonth });
+    renderBar({ appElement, currentDate, prevMonth, nextMonth });
     renderCalendar({ appElement, currentDate });
   };
 

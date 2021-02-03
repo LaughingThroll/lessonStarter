@@ -1,9 +1,9 @@
-import arrowLeft from '../../../assets/images/icons/arrow--left.svg';
-import arrowRight from '../../../assets/images/icons/arrow--right.svg';
+import iconArrowLeft from '@icons/arrow--left.svg';
+import iconArrowRight from '@icons/arrow--right.svg';
 
 import buttonArrow from '../renderButtons/buttonArrow';
 
-const renderBar = ({ appElement, currentDate, minusMonth, plusMonth }) => {
+const renderBar = ({ appElement, currentDate, prevMonth, nextMonth }) => {
 
   const calendarToolbar = document.createElement("div");
   calendarToolbar.classList.add("calendar__bar");
@@ -13,9 +13,9 @@ const renderBar = ({ appElement, currentDate, minusMonth, plusMonth }) => {
   const buttonClassRight = [mainClassButton, 'month-navigate__button--right'];
   
   const bar = `<div class="month-navigate">
-    ${buttonArrow(buttonClassLeft, arrowLeft)}
+    ${buttonArrow(buttonClassLeft, iconArrowLeft)}
     <div class="month-navigate__text">${currentDate.toLocaleString('en-US', {month: 'long', year: 'numeric'})}</div>
-    ${buttonArrow(buttonClassRight, arrowRight)}
+    ${buttonArrow(buttonClassRight, iconArrowRight)}
   </div>`;
 
   calendarToolbar.insertAdjacentHTML('afterbegin', bar);
@@ -26,8 +26,8 @@ const renderBar = ({ appElement, currentDate, minusMonth, plusMonth }) => {
     const buttonLeft = document.querySelector(`.${mainClassButton}--left`);
     const buttonRight = document.querySelector(`.${mainClassButton}--right`);
       
-    if (path.includes(buttonLeft)) minusMonth();
-    if (path.includes(buttonRight)) plusMonth();
+    if (path.includes(buttonLeft)) prevMonth();
+    if (path.includes(buttonRight)) nextMonth();
   });
 
 
