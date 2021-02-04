@@ -52,7 +52,8 @@ function getDataServer() {
         },
     })
     .then((response) => response.json())
-    .then((json) => console.log(json));
+    .then((json) => console.log(json))
+    .catch(err => console.error("Error:", err));
 }
 
 getDataServer();
