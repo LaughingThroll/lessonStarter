@@ -25,14 +25,14 @@ const departmentTeams = {
             percentageOfAbsent: [0, 2, 0, 0, 1, 2, 2, 2, 2, 2, 1, 1],
             members: [
                 {
-                    name: "FE_Team_User1",
+                    name: "BE_Team_User1",
                     vacations: [
                     { startDate: "15.02.2020", endDate: "22.02.2020", type: "UnPaid" },
                     { startDate: "20.03.2020", endDate: "22.03.2020", type: "UnPaid" },
                     ],
                 },
                 {
-                    name: "FE_Team_User1",
+                    name: "BE_Team_User2",
                     vacations: [
                     { startDate: "20.02.2020", endDate: "22.02.2020", type: "UnPaid" },
                     { startDate: "20.03.2020", endDate: "22.03.2020", type: "UnPaid" },
@@ -43,18 +43,19 @@ const departmentTeams = {
     ],
 };
 
-function getDataServer() {
-    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+async function getDataServer() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
         method: "PUT",
         body: JSON.stringify(departmentTeams),
         headers: {
         "Content-type": "application/json; charset=UTF-8",
         },
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+    });
+
+    const data = await response.json();
+    return data;
+
 }
 
-getDataServer();
 
-export { getDataServer };
+export  default getDataServer ;
