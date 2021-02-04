@@ -28,7 +28,8 @@ module.exports = {
     alias: {
       '~': Path.resolve(__dirname, '../src'),
       '@icons': Path.resolve(__dirname, '../src/assets/images/icons'),
-      '@utils': Path.resolve(__dirname, '../src/scripts/utils')
+      '@utils': Path.resolve(__dirname, '../src/scripts/utils'),
+      '@constant': Path.resolve(__dirname, '../src/scripts/constant')
     },
   },
   module: {
