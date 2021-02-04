@@ -1,5 +1,5 @@
 .calendar {
-  padding-top: 35px;
+  padding: 35px 0;
 
   &__bar {
     display: flex;
@@ -10,5 +10,9 @@
 
   &__border {
     border: 1px solid $main-border;
+
+    &:not(:last-child) {
+      border-right: 0;
+    }
   }
 }
