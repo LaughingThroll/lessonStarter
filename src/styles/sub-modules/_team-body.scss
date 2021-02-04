@@ -17,11 +17,13 @@
     }
   }
 
-  &--intendent {
-    margin-top: 35px;
+  &--header {
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
   }
 
-  & ~ .team-body:not(.team-body--intendent) {
+  & ~ .team-body:not(.team-body--header) {
     .team-body__cell {
       border-top: 0;
     }

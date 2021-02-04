@@ -14,9 +14,12 @@ import { formatDayInBinaryString } from '@utils/date';
 
 const renderCalendar = ({ appElement, currentDate }) => {
   getDataServer().then(({ teams }) => {
+    console.log(teams);
     const calendarContainer = document.createElement("table");
-    calendarContainer.classList.add("calendar__table", "calendar-table");
     const allDaysInMonth = daysInMonth(currentDate);
+    const calendarBody = document.createElement("tbody");
+    calendarContainer.classList.add("calendar__table", "calendar-table");
+    calendarBody.classList.add("calendar-table__body", "table-body");
 
     calendarContainer.prepend(renderCalendarHead({ currentDate, allDaysInMonth })); // This element must contain tr > th*monthLength > <span> DayName </span> + <span>DayNum</span>
 
@@ -29,9 +32,9 @@ const renderCalendar = ({ appElement, currentDate }) => {
     };
 
     const teamSectionMaker = (teams) => {
-      return (teams.map((team) => ` <tr class="team-body  team-body-header ${team.name === "Frontend Team" ? "melrose-theme melrose-theme--background" : null} ${team.name === "Backend Team" ? "malibu-theme malibu-theme--background" : null}" style="grid-template-columns: ${FIRST_COLUMN_WIDTH}px repeat(${allDaysInMonth + 1}, 1fr);">
-    <td class="team team--common team-body__cell calendar__border">
-      <span class="team__name">${team.name}</span>
+      return (teams.map((team) => ` <tr class="team-body team-body--header ${team.name === "Frontend Team" ? "melrose-theme melrose-theme--background" : null} ${team.name === "Backend Team" ? "malibu-theme malibu-theme--background" : null}" style="grid-template-columns: ${FIRST_COLUMN_WIDTH}px repeat(${allDaysInMonth + 1}, 1fr);">
+      <td class="team team--common team-body__cell calendar__border">
+        <span class="team__name">${team.name}</span>
       <div class="team__other">
         <div class="team__users users">
           <img class="users__svg" src=${iconUsers} alt="">
@@ -46,8 +49,7 @@ const renderCalendar = ({ appElement, currentDate }) => {
     </tr>${teamMemberRowMaker(team)}`).join(""));
     };
 
-    const calendarBody = document.createElement("tbody");
-    calendarBody.classList.add("calendar-table__body", "table-body");
+
     calendarBody.innerHTML = teamSectionMaker(teams);
     calendarContainer.append(calendarBody);
     appElement.append(calendarContainer);
