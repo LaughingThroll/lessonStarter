@@ -1,4 +1,23 @@
 .calendar-table {
-  display: block;
+  // TODO сделать отступ для tr или td в 30 px не изменяя свйоство display
+  // table-layout: fixed;
   width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid $main-border;
+  }
+
+  td {
+    padding-top: 10px;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 30px;
+      background-color: #000;
+    }
+  }
 }

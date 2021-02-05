@@ -1,6 +1,9 @@
 import renderBar from "../renderBar";
 import renderCalendar from "../renderCalendar";
 
+import getDataServer from '@utils/getDataServer';
+import { TEAMS_URL } from '@constant';
+
 const renderApp = () => {
   const appElement = document.getElementById("appRoot");
 
@@ -19,18 +22,20 @@ const renderApp = () => {
     if (month > 11) month = 0;
   };
 
-  const render = () => {
-    renderBar({ appElement, currentDate, prevMonth, nextMonth });
-    renderCalendar({ appElement, currentDate });
-  };
-
+  
   const update = () => {
     appElement.innerHTML = '';
-    render();
+    renderBar({ appElement, currentDate, prevMonth, nextMonth });
+    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
   };
 
-  render();
+  const render = () => {
+    renderBar({ appElement, currentDate, prevMonth, nextMonth });
+    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+  };
 
+
+  render();
 };
 
 export default renderApp;

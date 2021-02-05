@@ -1,12 +1,13 @@
 @mixin themes($themes-name, $themes-main, $themes-bg, $themes-text-color) {
   .#{$themes-name} {
-    border-left-color: $themes-main;
-
     &.#{$themes-name}--background {
       background-color: $themes-bg;
     }
 
     .team {
+      // TODO сделать  бордер он немного не по макету
+      border-left: 4px solid $themes-main;
+
       &__weekend-percent {
         background-color: $themes-main;
         color: $themes-text-color;

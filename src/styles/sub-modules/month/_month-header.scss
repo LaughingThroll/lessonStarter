@@ -1,16 +1,14 @@
 .month-header {
-  display: grid;
-
   &__cell {
-    border-bottom: 0;
-
     &:first-child {
       border-top: 0;
       border-left: 0;
+      padding-bottom: 24px;
+      max-width: 260px;
     }
 
     &:not(:first-child) {
-      padding: 12px 7px 7px;
+      min-width: 34px;
 
       & > * {
         display: block;
@@ -18,12 +16,7 @@
     }
 
     &:last-child {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-weight: 400;
-      padding-left: 0;
-      padding-right: 0;
     }
   }
 
