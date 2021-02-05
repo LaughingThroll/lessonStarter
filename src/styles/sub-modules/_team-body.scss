@@ -1,31 +1,13 @@
 .team-body {
-  display: grid;
-  border-left-width: 4px;
-  border-left-style: solid;
-
   &__cell {
     &:first-child {
-      border-left: 0;
+      min-width: 260px;
     }
 
     &:last-child {
       @extend %font-bold;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  &--header {
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-  }
-
-  & ~ .team-body:not(.team-body--header) {
-    .team-body__cell {
-      border-top: 0;
+      text-align: center;
     }
   }
 }

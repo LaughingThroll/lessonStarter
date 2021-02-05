@@ -1,2 +1,2 @@
-export const BORDER_LEFT_WIDTH = 4;
-export const FIRST_COLUMN_WIDTH = 260;
+export const TEAMS_URL = "https://jsonplaceholder.typicode.com/posts/1";
+
