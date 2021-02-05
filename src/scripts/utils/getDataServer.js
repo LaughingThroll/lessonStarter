@@ -43,17 +43,20 @@ const departmentTeams = {
     ],
 };
 
-function getDataServer() {
-    fetch("https://jsonplaceholder.typicode.com/posts/1", {
-        method: "PUT",
-        body: JSON.stringify(departmentTeams),
-        headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        },
-    })
-    .then((response) => response.json())
-    .then((json) => console.log(json))
-    .catch(err => console.error("Error:", err));
+async function getDataServer() {
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+            method: "PUT",
+            body: JSON.stringify(departmentTeams),
+            headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            },
+        })
+        const data = await response.json();
+        console.log("Data: ", data);
+    }catch(err){
+        console.error("Error:", err);
+    }
 }
 
 getDataServer();
