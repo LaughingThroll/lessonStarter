@@ -3,7 +3,7 @@ class TeamBodyCell{
     this.dayString = dayString;
   }
   render() {
-    return `<td class=" team-body__cell ${this.dayString === 'Sa' || this.dayString === 'Su' ? 'cell-gray' : ''} "></td>`
+    return `<td class=" team-body__cell ${this.dayString === 'Sa' || this.dayString === 'Su' ? 'cell-gray' : ''} "></td>`;
   };
 };
 
