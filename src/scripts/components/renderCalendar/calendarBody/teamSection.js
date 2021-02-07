@@ -9,7 +9,7 @@ import { formatDayInBinaryString } from '@utils/date';
 
 const teamSection = (currentDate, allDaysInMonth, teams) => {
   return (teams.map((team) => ` <tr class="team-body row-header ${team.name === "Frontend Team" ? "melrose-theme melrose-theme--background" : team.name === "Backend Team" ? "malibu-theme malibu-theme--background" : ''}" >
-  <td class="team team--common team-body__cell malibu-theme">
+  <td class="team team--common team-body__cell">
     <span class="team__name">${team.name}</span>
   <div class="team__other">
     <div class="team__users users">
