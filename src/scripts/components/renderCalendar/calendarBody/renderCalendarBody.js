@@ -1,4 +1,4 @@
-import teamSection from './teamSection';
+import TeamSection from './teamSection';
 
 class RenderCalendarBody{
   constructor({ currentDate, allDaysInMonth, teams }){
@@ -11,7 +11,7 @@ class RenderCalendarBody{
     const calendarBody = document.createElement("tbody");
   calendarBody.classList.add('calendar-table__body', 'table-body');
 
-  calendarBody.insertAdjacentHTML('afterbegin', teamSection(this.currentDate, this.allDaysInMonth, this.teams));
+  calendarBody.insertAdjacentHTML('afterbegin', new TeamSection(this.currentDate, this.allDaysInMonth, this.teams).render());
 
   return calendarBody;
   }
