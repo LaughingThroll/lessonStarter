@@ -31,7 +31,5 @@ class TeamSection {
       <td class="team-body__cell cell-gray"></td>
       </tr>${new TeamMember(this.currentDate, this.allDaysInMonth, team).render()}`).join(""));
     }
-};
-
 
 export default TeamSection;

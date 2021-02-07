@@ -9,6 +9,7 @@ const renderApp = () => {
 
   const currentDate = new Date();
   let month = new Date().getMonth();
+  let teams = [];
 
   const prevMonth = () => {
     currentDate.setMonth(--month);
@@ -22,9 +23,14 @@ const renderApp = () => {
     if (month > 11) month = 0;
   };
 
+  const likeComponentDidMount = () => {
+    return getDataServer(TEAMS_URL).then(({ teams: teamsResponse }) => teams = teamsResponse);
+  };
   
+
   const update = () => {
     appElement.innerHTML = '';
+
     new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
     getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
   };
@@ -33,7 +39,6 @@ const renderApp = () => {
     new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
     getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
   };
-
 
   render();
 };
