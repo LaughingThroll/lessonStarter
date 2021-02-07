@@ -1,7 +1,7 @@
 import iconUsers from '@icons/users.svg';
 import iconArrowUp from '@icons/arrow--up.svg';
 
-import buttonArrow from '../../renderButtons/buttonArrow';
+import ButtonArrow from '../../renderButtons/buttonArrow';
 import TeamBodyCell from './teamBodyCell';
 import TeamMember from './teamMember';
 
@@ -24,7 +24,7 @@ class TeamSection {
             <span class="users__count">${team.members.length}</span>
           </div>
           <div class="team__weekend-percent weekend-percent">${team.percentageOfAbsent[this.currentDate.getMonth()]}</div>
-          ${buttonArrow(["team__arrow", "btn-arrow-up"], iconArrowUp)}
+          ${new ButtonArrow(["team__arrow", "btn-arrow-up"], iconArrowUp).render()}
         </div>
       </td>
       ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(this.currentDate, day + 1)).render()).join(""))}

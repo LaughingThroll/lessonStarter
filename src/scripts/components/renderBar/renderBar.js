@@ -1,7 +1,7 @@
 import iconArrowLeft from '@icons/arrow--left.svg';
 import iconArrowRight from '@icons/arrow--right.svg';
 
-import buttonArrow from '../renderButtons/buttonArrow';
+import ButtonArrow from '../renderButtons/buttonArrow';
 
 const renderBar = ({ appElement, currentDate, prevMonth, nextMonth }) => {
 
@@ -13,9 +13,9 @@ const renderBar = ({ appElement, currentDate, prevMonth, nextMonth }) => {
   const buttonClassRight = [mainClassButton, 'month-navigate__button--right'];
   
   const bar = `<div class="month-navigate">
-    ${buttonArrow(buttonClassLeft, iconArrowLeft)}
+    ${new ButtonArrow(buttonClassLeft, iconArrowLeft).render()}
     <div class="month-navigate__text">${currentDate.toLocaleString('en-US', {month: 'long', year: 'numeric'})}</div>
-    ${buttonArrow(buttonClassRight, iconArrowRight)}
+    ${new ButtonArrow(buttonClassRight, iconArrowRight).render()}
   </div>`;
 
   calendarToolbar.insertAdjacentHTML('afterbegin', bar);
