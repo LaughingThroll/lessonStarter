@@ -2,6 +2,7 @@ $indentation: 31px;
 $pseudo-border: 0.5px;
 
 .calendar-table {
+  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
 

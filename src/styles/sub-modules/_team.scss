@@ -5,6 +5,10 @@
     .team__name {
       @extend %font-bold;
 
+      display: inline-block;
+      max-width: 110px;
+      width: 100%;
+      text-overflow: ellipsis;
       text-transform: capitalize;
     }
   }
@@ -16,7 +20,6 @@
   }
 
   &__other {
-    // TODO стили не соответсвуют макету немножко
     display: inline-block;
     margin-left: 20px;
     vertical-align: middle;
