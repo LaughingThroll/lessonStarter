@@ -3,7 +3,7 @@ import iconArrowUp from '@icons/arrow--up.svg';
 
 import buttonArrow from '../../renderButtons/buttonArrow';
 import TeamBodyCell from './teamBodyCell';
-import teamMember from './teamMember';
+import TeamMember from './teamMember';
 
 import { formatDayInBinaryString } from '@utils/date';
 
@@ -22,7 +22,7 @@ const teamSection = (currentDate, allDaysInMonth, teams) => {
 </td>
 ${(new Array(allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(currentDate, day + 1)).render()).join(""))}
 <td class="team-body__cell cell-gray"></td>
-</tr>${teamMember(currentDate, allDaysInMonth, team)}`).join(""));
+</tr>${new TeamMember(currentDate, allDaysInMonth, team).render()}`).join(""));
 };
 
 
