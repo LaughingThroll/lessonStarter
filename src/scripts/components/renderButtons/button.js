@@ -1,8 +1,16 @@
-const button = (classNames = [], path, plus = true) => {
-  return `<button class="button ${classNames.join(' ')}">
-  ${plus ? `<img class="button__svg" src="${path}" alt="">` : ''} 
-  Add Vacation
-  </button>`;
+class Button {
+  constructor(classNames = [], path, plus = true){
+    this.classNames = classNames;
+    this.path = path;
+    this.plus = plus;
+  }
+  
+  render() {
+    return `<button class="button ${this.classNames.join(' ')}">
+    ${this.plus ? `<img class="button__svg" src="${this.path}" alt="">` : ''} 
+    Add Vacation
+    </button>`;
+  }
 };
 
-export default button;
+export default Button;
