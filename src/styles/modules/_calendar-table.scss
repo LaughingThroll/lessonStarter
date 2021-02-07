@@ -7,7 +7,28 @@
     border: 1px solid $main-border;
   }
 
-  .row-header:not(:first-child) {
+  .row-header:not(:first-child) td {
     border-top: 30px solid white;
+    position: relative;
+  }
+
+  .row-header:not(:first-child) td::after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: $main-border;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .row-header:not(:first-child) td::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: $main-border;
+    position: absolute;
+    top: 30 px !important;
+    left: 0;
   }
 }
