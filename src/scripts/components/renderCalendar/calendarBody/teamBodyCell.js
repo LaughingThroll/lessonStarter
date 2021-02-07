@@ -1,5 +1,10 @@
-const teamBodyCell = dayString => {
-  return `<td class=" team-body__cell ${dayString === 'Sa' ||dayString === 'Su' ? 'cell-gray' : ''} "></td>`;
+class TeamBodyCell{
+  constructor(dayString){
+    this.dayString = dayString;
+  }
+  render() {
+    return `<td class=" team-body__cell ${this.dayString === 'Sa' || this.dayString === 'Su' ? 'cell-gray' : ''} "></td>`;
+  };
 };
 
-export default teamBodyCell;
+export default TeamBodyCell;
