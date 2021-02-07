@@ -1,20 +1,12 @@
-import TeamSection from './teamSection';
+import teamSection from './teamSection';
 
-class RenderCalendarBody{
-  constructor({ currentDate, allDaysInMonth, teams }){
-    this.currentDate = currentDate;
-    this.allDaysInMonth = allDaysInMonth;
-    this.teams = teams;
-  }
-
-  render(){
-    const calendarBody = document.createElement("tbody");
+const renderCalendarBody = ({ currentDate, allDaysInMonth, teams }) => {
+  const calendarBody = document.createElement("tbody");
   calendarBody.classList.add('calendar-table__body', 'table-body');
 
-  calendarBody.insertAdjacentHTML('afterbegin', new TeamSection(this.currentDate, this.allDaysInMonth, this.teams).render());
+  calendarBody.insertAdjacentHTML('afterbegin', teamSection(currentDate, allDaysInMonth, teams));
 
   return calendarBody;
-  }
 };
 
-export default RenderCalendarBody;
+export default renderCalendarBody;

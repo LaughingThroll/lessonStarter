@@ -1,15 +1,8 @@
-class ButtonArrow {
-  constructor(classNames /* Array[string] */, path/* string */) {
-    this.classNames = classNames;
-    this.path = path;
-  }
-  
-  render() {
-    return `<button class="${this.classNames.join(' ')}">
-    <img class="arrow" src="${this.path}" alt="">
-    </button>`;
-  }
+const buttonArrow = (classNames /* Array[string] */, path/* string */) => {
+  return `<button class="${classNames.join(' ')}">
+    <img class="arrow" src="${path}" alt="">
+  </button>`;
 };
 
-export default ButtonArrow;
+export default buttonArrow;
 

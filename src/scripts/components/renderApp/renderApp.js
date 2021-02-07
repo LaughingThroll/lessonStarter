@@ -1,4 +1,4 @@
-import RenderBar from "../renderBar";
+import renderBar from "../renderBar";
 import renderCalendar from "../renderCalendar";
 
 import getDataServer from '@utils/getDataServer';
@@ -31,14 +31,17 @@ const renderApp = () => {
   const update = () => {
     appElement.innerHTML = '';
 
-    new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    renderBar({ appElement, currentDate, prevMonth, nextMonth });
+    renderCalendar({ appElement, currentDate, teams });
   };
 
   const render = () => {
-    new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    likeComponentDidMount().then(() => {
+      renderBar({ appElement, currentDate, prevMonth, nextMonth });
+      renderCalendar({ appElement, currentDate, teams });
+    });
   };
+
 
   render();
 };
