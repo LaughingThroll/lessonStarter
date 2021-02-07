@@ -1,6 +1,6 @@
 import iconPlus from '@icons/plus.svg';
 
-import button from '../../renderButtons/button';
+import Button from '../../renderButtons/button';
 import MonthHeaderCell from './monthHeaderCell';
 
 import { formatDayInBinaryString } from '@utils/date';
@@ -16,7 +16,7 @@ class RenderCalendarHead{
     calendarHead.classList.add('calendar-table__header');
 
     const monthHeaderHTML = `<tr class="month-header">
-    <th class="month-header__cell">${button([], iconPlus)}</th>
+    <th class="month-header__cell">${new Button([], iconPlus).render()}</th>
     ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => {
       return new MonthHeaderCell(formatDayInBinaryString(this.currentDate, day + 1), day + 1).renderDayOfWeek();
     }).join(''))}
