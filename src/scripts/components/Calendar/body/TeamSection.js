@@ -6,18 +6,20 @@ import TeamBodyCell from './TeamBodyCell';
 import TeamMember from './TeamMember';
 
 import { formatDayInBinaryString } from '@utils/date';
+import { THEMES } from '@constant';
 
 class TeamSection {
-  constructor(currentDate, allDaysInMonth, team) {
+  constructor(currentDate, allDaysInMonth, team, i) {
     this.currentDate = currentDate;
     this.allDaysInMonth = allDaysInMonth;
     this.team = team;
+    this.themeIndex = i;
   }
 
   render() {
     const { name, members, percentageOfAbsent } = this.team;
-    
-    return `<tr class="team-body calendar-table--indentation ${name === "Frontend Team" ? "melrose-theme melrose-theme--background" : name === "Backend Team" ? "malibu-theme malibu-theme--background" : ''}" >
+
+    return `<tr class="team-body calendar-table--indentation ${ THEMES[this.themeIndex % THEMES.length][0] } ${ THEMES[this.themeIndex % THEMES.length][1] }" >
       <td class="team team--common team-body__cell">
         <span class="team__name">${name}</span>
         <div class="team__other">
@@ -32,7 +34,7 @@ class TeamSection {
       ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(this.currentDate, day + 1)).render()).join(""))}
       <td class="team-body__cell cell-gray"></td>
       </tr>
-      ${members.map(member => new TeamMember(this.currentDate, this.allDaysInMonth, member).render()).join('')}`;
+      ${members.map(member => new TeamMember(this.currentDate, this.allDaysInMonth, member, this.themeIndex).render()).join('')}`;
   }
 }
 
