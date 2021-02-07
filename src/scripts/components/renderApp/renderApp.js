@@ -9,6 +9,7 @@ const renderApp = () => {
 
   const currentDate = new Date();
   let month = new Date().getMonth();
+  let teams = [];
 
   const prevMonth = () => {
     currentDate.setMonth(--month);
@@ -22,16 +23,23 @@ const renderApp = () => {
     if (month > 11) month = 0;
   };
 
+  const likeComponentDidMount = () => {
+    return getDataServer(TEAMS_URL).then(({ teams: teamsResponse }) => teams = teamsResponse);
+  };
   
+
   const update = () => {
     appElement.innerHTML = '';
+
     renderBar({ appElement, currentDate, prevMonth, nextMonth });
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    renderCalendar({ appElement, currentDate, teams });
   };
 
   const render = () => {
-    renderBar({ appElement, currentDate, prevMonth, nextMonth });
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    likeComponentDidMount().then(() => {
+      renderBar({ appElement, currentDate, prevMonth, nextMonth });
+      renderCalendar({ appElement, currentDate, teams });
+    });
   };
 
 
