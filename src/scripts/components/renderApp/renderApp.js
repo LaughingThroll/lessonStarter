@@ -4,24 +4,6 @@ import renderCalendar from "../renderCalendar";
 import getDataServer from '@utils/getDataServer';
 import { TEAMS_URL } from '@constant';
 
-
-
-export class Component {
-  constructor(parentSelector, tagName = "div") {
-    if (typeof parentSelector === "string") {
-      this.parent = document.querySelector(parentSelector);
-    } else {
-      this.parent = parentSelector;
-    }
-    this.component = document.createElement(tagName);
-  }
-
-  render() {
-    this.parent.append(this.component);
-    return this.component;
-  }
-}
-
 const renderApp = () => {
   const appElement = document.getElementById("appRoot");
 
