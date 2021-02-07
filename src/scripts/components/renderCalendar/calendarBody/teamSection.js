@@ -2,14 +2,14 @@ import iconUsers from '@icons/users.svg';
 import iconArrowUp from '@icons/arrow--up.svg';
 
 import buttonArrow from '../../renderButtons/buttonArrow';
-import teamBodyCell from './teamBodyCell';
+import TeamBodyCell from './teamBodyCell';
 import teamMember from './teamMember';
 
 import { formatDayInBinaryString } from '@utils/date';
 
 const teamSection = (currentDate, allDaysInMonth, teams) => {
   return (teams.map((team) => ` <tr class="team-body row-header ${team.name === "Frontend Team" ? "melrose-theme melrose-theme--background" : team.name === "Backend Team" ? "malibu-theme malibu-theme--background" : ''}" >
-  <td class="team team--common team-body__cell malibu-theme">
+  <td class="team team--common team-body__cell">
     <span class="team__name">${team.name}</span>
   <div class="team__other">
     <div class="team__users users">
@@ -20,7 +20,7 @@ const teamSection = (currentDate, allDaysInMonth, teams) => {
     ${buttonArrow(["team__arrow", "btn-arrow-up"], iconArrowUp)}
   </div>
 </td>
-${(new Array(allDaysInMonth).fill(0).map((_, day) => teamBodyCell(formatDayInBinaryString(currentDate, day + 1))).join(""))}
+${(new Array(allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(currentDate, day + 1)).render()).join(""))}
 <td class="team-body__cell cell-gray"></td>
 </tr>${teamMember(currentDate, allDaysInMonth, team)}`).join(""));
 };

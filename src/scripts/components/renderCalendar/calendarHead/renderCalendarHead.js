@@ -1,7 +1,7 @@
 import iconPlus from '@icons/plus.svg';
 
 import button from '../../renderButtons/button';
-import monthHeaderCell from './monthHeaderCell';
+import MonthHeaderCell from './monthHeaderCell';
 
 import { formatDayInBinaryString } from '@utils/date';
 
@@ -12,7 +12,7 @@ const renderCalendarHead = ({ currentDate, allDaysInMonth }) => {
   const monthHeaderHTML = `<tr class="month-header">
   <th class="month-header__cell">${button([], iconPlus)}</th>
   ${(new Array(allDaysInMonth).fill(0).map((_, day) => {
-    return monthHeaderCell(formatDayInBinaryString(currentDate, day + 1), day + 1);
+    return new MonthHeaderCell(formatDayInBinaryString(currentDate, day + 1), day + 1).renderDayOfWeek();
   }).join(''))}
   <th class="month-header__cell cell-gray"> Sum </th>
   </tr>`;
