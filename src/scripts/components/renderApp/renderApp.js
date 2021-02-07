@@ -32,12 +32,14 @@ const renderApp = () => {
     appElement.innerHTML = '';
 
     new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    renderCalendar({ appElement, currentDate, teams });
   };
 
   const render = () => {
-    new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
-    getDataServer(TEAMS_URL).then(({ teams }) => renderCalendar({ appElement, currentDate, teams }));
+    likeComponentDidMount().then(() => {
+      new RenderBar({ appElement, currentDate, prevMonth, nextMonth }).render();
+      renderCalendar({ appElement, currentDate, teams });
+    });
   };
 
   render();
