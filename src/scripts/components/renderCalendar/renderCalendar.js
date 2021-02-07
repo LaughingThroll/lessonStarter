@@ -1,5 +1,5 @@
 import RenderCalendarHead from './calendarHead/renderCalendarHead';
-import renderCalendarBody from './calendarBody/renderCalendarBody';
+import RenderCalendarBody from './calendarBody/renderCalendarBody';
 
 import { daysInMonth } from '@utils/date';
 
@@ -11,7 +11,7 @@ const renderCalendar = ({ appElement, currentDate, teams }) => {
   
   calendarContainer.prepend(new RenderCalendarHead({currentDate, allDaysInMonth}).render()); 
   
-  calendarContainer.append(renderCalendarBody({ currentDate, allDaysInMonth, teams }));
+  calendarContainer.append(new RenderCalendarBody({ currentDate, allDaysInMonth, teams }).render());
 
   appElement.append(calendarContainer);
 };
