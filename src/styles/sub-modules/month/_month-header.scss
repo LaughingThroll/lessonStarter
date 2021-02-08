@@ -4,12 +4,10 @@
       border-top: 0;
       border-left: 0;
       padding-bottom: 24px;
-      max-width: 260px;
+      width: 260px;
     }
 
     &:not(:first-child) {
-      min-width: 34px;
-
       & > * {
         display: block;
       }
