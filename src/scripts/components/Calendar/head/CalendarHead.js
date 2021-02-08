@@ -1,12 +1,12 @@
 import iconPlus from '@icons/plus.svg';
 
-import Button from '../../renderButtons/button';
+import { Button } from '../../Buttons';
 import MonthHeaderCell from './monthHeaderCell';
 
 import { formatDayInBinaryString } from '@utils/date';
 
-class RenderCalendarHead{
-  constructor({currentDate, allDaysInMonth}) {
+class CalendarHead {
+  constructor(currentDate, allDaysInMonth) {
     this.currentDate = currentDate;
     this.allDaysInMonth = allDaysInMonth;
   }
@@ -29,4 +29,4 @@ class RenderCalendarHead{
   }
 };
 
-export default RenderCalendarHead;
+export default CalendarHead;

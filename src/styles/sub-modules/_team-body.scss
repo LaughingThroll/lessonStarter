@@ -1,9 +1,5 @@
 .team-body {
   &__cell {
-    &:first-child {
-      min-width: 260px;
-    }
-
     &:last-child {
       @extend %font-bold;
 
