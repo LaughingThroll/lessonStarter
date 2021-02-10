@@ -21,7 +21,7 @@ class Bar {
 
     const bar = `<div class="month-navigate">
       ${new ButtonArrow(buttonClassLeft, iconArrowLeft).render()}
-      <div class="month-navigate__text">${this.currentDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })}</div>
+      <div id="month" class="month-navigate__text">${this.currentDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })}</div>
       ${new ButtonArrow(buttonClassRight, iconArrowRight).render()}
     </div>`;
 
@@ -36,6 +36,10 @@ class Bar {
       if (path.includes(buttonLeft)) this.prevMonth();
       if (path.includes(buttonRight)) this.nextMonth();
     });
+  }
+
+  update(month) {
+    document.getElementById('month').innerHTML = month.toLocaleString('en-US', { month: 'long', year: 'numeric' });
   }
 
 };
