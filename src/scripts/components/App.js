@@ -3,6 +3,8 @@ import Calendar from "./Calendar";
 
 import getDataServer from '@utils/getDataServer';
 
+import CalendarHead from './Calendar/head/CalendarHead'
+
 import { TEAMS_URL } from '@constant';
 
 class App {
@@ -11,7 +13,10 @@ class App {
     this.currentDate = new Date();
     this.month = new Date().getMonth();
     this.teams = [];
+    this.barTemplate = new Bar(this.appElement, this.currentDate, this.prevMonth, this.nextMonth );
+    this.calendarTemplate = new Calendar( this.appElement, this.currentDate, this.teams );
   }
+
 
   likeComponentDidMount = () => {
     return getDataServer(TEAMS_URL).then(({ teams: teamsResponse }) => this.teams = teamsResponse);
@@ -32,16 +37,16 @@ class App {
   };
 
   update = () => {
-    this.appElement.innerHTML = '';
+    // this.appElement.innerHTML = '';
 
-    new Bar( this.appElement, this.currentDate, this.prevMonth, this.nextMonth ).render();
-    new Calendar( this.appElement, this.currentDate, this.teams ).render();
+    this.barTemplate.update(this.currentDate);
+    this.calendarTemplate.update(this.currentDate);
   };
 
   render = () => {
     this.likeComponentDidMount().then(() => {
-      new Bar(this.appElement, this.currentDate, this.prevMonth, this.nextMonth ).render();
-      new Calendar( this.appElement, this.currentDate, this.teams ).render();
+      this.barTemplate.render();
+      this.calendarTemplate.render(this.teams);
     });
   };
 

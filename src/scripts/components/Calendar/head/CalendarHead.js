@@ -11,14 +11,16 @@ class CalendarHead {
     this.allDaysInMonth = allDaysInMonth;
   }
   
+  days =  Array.from({ length: 31 }, (_, i) => i + 1);
+
   render(){
     const calendarHead = document.createElement("thead");
     calendarHead.classList.add('calendar-table__header');
 
     const monthHeaderHTML = `<tr class="month-header">
     <th class="month-header__cell">${new Button([], iconPlus).render()}</th>
-    ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => {
-      return new MonthHeaderCell(formatDayInBinaryString(this.currentDate, day + 1), day + 1).renderDayOfWeek();
+    ${(this.days.map((day) => {
+      return new MonthHeaderCell(formatDayInBinaryString(this.currentDate, day), day).renderDayOfWeek();
     }).join(''))}
     <th class="month-header__cell cell-gray"> Sum </th>
     </tr>`;
@@ -27,6 +29,7 @@ class CalendarHead {
 
     return calendarHead;
   }
+
 };
 
 export default CalendarHead;
