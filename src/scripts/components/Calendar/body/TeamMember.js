@@ -1,5 +1,5 @@
-import { formatDayInBinaryString } from "@utils/date";
-import { THEMES } from "@constant";
+import { THEMES } from "../../../constant";
+import { formatDayInBinaryString } from "../../../utils/date";
 import TeamBodyCell from "./TeamBodyCell";
 
 class TeamMember {

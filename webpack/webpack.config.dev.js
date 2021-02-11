@@ -8,7 +8,7 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   target: "web",
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'eval-cheap-source-map',
   output: {
     chunkFilename: 'js/[name].chunk.js',
   },
@@ -34,6 +34,7 @@ module.exports = merge(common, {
         loader: 'eslint-loader',
         options: {
           emitWarning: true,
+          fix: true
         },
       },
       {

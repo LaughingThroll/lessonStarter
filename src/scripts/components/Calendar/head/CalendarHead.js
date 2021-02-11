@@ -1,6 +1,6 @@
-import iconPlus from "@icons/plus.svg";
+import iconPlus from "../../../../assets/images/icons/plus.svg";
 
-import { formatDayInBinaryString } from "@utils/date";
+import { formatDayInBinaryString } from "../../../utils/date";
 import { Button } from "../../Buttons";
 import MonthHeaderCell from "./monthHeaderCell";
 

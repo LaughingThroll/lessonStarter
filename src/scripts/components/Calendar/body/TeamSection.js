@@ -1,8 +1,8 @@
-import iconUsers from "@icons/users.svg";
-import iconArrowUp from "@icons/arrow--up.svg";
+import iconUsers from "../../../../assets/images/icons/users.svg";
+import iconArrowUp from "../../../../assets/images/icons/arrow--up.svg";
 
-import { formatDayInBinaryString } from "@utils/date";
-import { THEMES } from "@constant";
+import { formatDayInBinaryString } from "../../../utils/date";
+import { THEMES } from "../../../constant";
 import { ButtonArrow } from "../../Buttons";
 import TeamBodyCell from "./TeamBodyCell";
 import TeamMember from "./TeamMember";

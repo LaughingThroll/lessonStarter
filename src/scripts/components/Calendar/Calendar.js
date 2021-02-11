@@ -1,4 +1,4 @@
-import { daysInMonth } from "@utils/date";
+import { daysInMonth } from "../../utils/date";
 import { CalendarHead } from "./head";
 import { CalendarBody } from "./body";
 

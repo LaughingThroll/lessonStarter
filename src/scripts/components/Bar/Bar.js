@@ -1,5 +1,5 @@
-import iconArrowLeft from "@icons/arrow--left.svg";
-import iconArrowRight from "@icons/arrow--right.svg";
+import iconArrowLeft from "../../../assets/images/icons/arrow--left.svg";
+import iconArrowRight from "../../../assets/images/icons/arrow--right.svg";
 
 import { ButtonArrow } from "../Buttons";
 
