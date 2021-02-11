@@ -1,4 +1,4 @@
-import departmentTeams from '../DB';
+import departmentTeams from "../DB";
 
 async function getDataServer(url) {
   const response = await fetch(url, {
@@ -8,8 +8,8 @@ async function getDataServer(url) {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  return await response.json();
+  const data = await response.json();
+  return data;
 }
-
 
 export default getDataServer;
