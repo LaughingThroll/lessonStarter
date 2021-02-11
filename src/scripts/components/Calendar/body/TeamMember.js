@@ -1,26 +1,28 @@
+import { createVNode } from '@utils/VDOM';
+
 import TeamBodyCell from './TeamBodyCell';
 
 import { formatDayInBinaryString } from '@utils/date';
-import { THEMES } from '@constant';
 
 class TeamMember {
-  constructor(currentDate, allDaysInMonth, member, themeIndex){
+  constructor(currentDate, allDaysInMonth, member, theme) {
     this.currentDate = currentDate;
     this.allDaysInMonth = allDaysInMonth;
     this.member = member;
-    this.themeIndex = themeIndex;
+    this.theme = theme;
   }
-  
-  render() {
 
+  render() {
     const { name } = this.member;
-    
-    return `<tr class="team-body ${ THEMES[this.themeIndex % THEMES.length][0] } ">
-        <td class="team team--member team-body__cell "><span class="team__name">${ name }</span></td>
-        ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(this.currentDate, day + 1)).render()).join(""))}
-        <td class="team-body__cell cell-gray">4</td>
-      </tr>`;
-    };
+
+    return (
+      createVNode('tr', { classNames: `team-body ${this.theme}` },
+        createVNode('td', { classNames: 'team team--member team-body__cell' }, createVNode('span', { classNames: 'team__name' }, `${name}`)),
+        ...new Array(this.allDaysInMonth).fill(0).map((_, day) => new TeamBodyCell(formatDayInBinaryString(this.currentDate, day + 1)).render()),
+        createVNode('td', { classNames: 'team-body__cell cell-gray' }, '4')
+      )
+    );
+  };
 };
 
 export default TeamMember;

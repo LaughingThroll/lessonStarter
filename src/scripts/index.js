@@ -5,4 +5,4 @@ if (process.env.NODE_ENV === 'development') {
   require('../index.html');
 }
 
-new App(document.getElementById("appRoot")).render();
+new App(document.getElementById("appRoot"));

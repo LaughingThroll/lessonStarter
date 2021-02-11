@@ -1,3 +1,5 @@
+import { createVNode } from '@utils/VDOM';
+
 import iconPlus from '@icons/plus.svg';
 
 import { Button } from '../../Buttons';
@@ -10,22 +12,21 @@ class CalendarHead {
     this.currentDate = currentDate;
     this.allDaysInMonth = allDaysInMonth;
   }
-  
-  render(){
-    const calendarHead = document.createElement("thead");
-    calendarHead.classList.add('calendar-table__header');
 
-    const monthHeaderHTML = `<tr class="month-header">
-    <th class="month-header__cell">${new Button([], iconPlus).render()}</th>
-    ${(new Array(this.allDaysInMonth).fill(0).map((_, day) => {
-      return new MonthHeaderCell(formatDayInBinaryString(this.currentDate, day + 1), day + 1).renderDayOfWeek();
-    }).join(''))}
-    <th class="month-header__cell cell-gray"> Sum </th>
-    </tr>`;
+  render() {
+    return (
+      createVNode('thead', { classNames: 'calendar-table__header' },
+        createVNode('tr', { classNames: 'month-header' },
+          createVNode('th', { classNames: 'month-header__cell' }, new Button([], iconPlus).render()),
+          // render more th on all Days
+          ...new Array(this.allDaysInMonth).fill(0).map((_, day) => {
+            return new MonthHeaderCell(formatDayInBinaryString(this.currentDate, day + 1), day + 1).render();
+          }),
 
-    calendarHead.insertAdjacentHTML('afterbegin', monthHeaderHTML);
-
-    return calendarHead;
+          createVNode('th', { classNames: 'month-header__cell cell-gray' }, 'Sum')
+        )
+      )
+    );
   }
 };
 

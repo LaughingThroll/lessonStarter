@@ -1,12 +1,17 @@
+import { createVNode } from '@utils/VDOM';
+
 class MonthHeaderCell {
   constructor(dayString, dayNumber) {
     this.dayString = dayString;
     this.dayNumber = dayNumber;
   }
-  renderDayOfWeek() {
-    return `<th class="month-header__cell ${this.dayString === 'Sa' || this.dayString === 'Su' ? 'cell-gray' : ''}">
-    <span class="month-header__day">${this.dayString}</span> <span class="month-header__number">${this.dayNumber}</span>
-  </th>`;
+  render() {
+    return (
+      createVNode('th', { classNames: `month-header__cell ${this.dayString === 'Sa' || this.dayString === 'Su' ? 'cell-gray' : ''}` },
+        createVNode('span', { classNames: 'month-header__day' }, `${this.dayString}`),
+        createVNode('span', { classNames: 'month-header__number' }, `${this.dayNumber}`)
+      )
+    );
   }
 };
 

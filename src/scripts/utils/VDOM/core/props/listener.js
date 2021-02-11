@@ -1,0 +1,1 @@
+export default function listener(e) { return this[e.type](e);}; 
