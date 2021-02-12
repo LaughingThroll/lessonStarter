@@ -1,6 +1,8 @@
 import departmentTeams from "../DB";
 
-async function getDataServer(url) {
+// import { IDepartmentTeams } from '../types'
+
+async function getDataServer(url: string): Promise<any> {
   const response = await fetch(url, {
     method: "PUT",
     body: JSON.stringify(departmentTeams),
@@ -8,7 +10,7 @@ async function getDataServer(url) {
       "Content-type": "application/json; charset=UTF-8",
     },
   });
-  const data = await response.json();
+  const data: Promise<any> = await response.json();
   return data;
 }
 

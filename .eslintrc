@@ -61,6 +61,11 @@
   },
   "settings": {
     "import/resolver": {
+      "alias": {
+        "map": [
+            ["@icons", "./src/assets/images/icons"]
+        ]
+    },
       "node": {
         "extensions": [
           ".js",

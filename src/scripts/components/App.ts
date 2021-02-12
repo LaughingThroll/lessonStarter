@@ -4,40 +4,50 @@ import { TEAMS_URL } from "../constant";
 import Calendar from "./Calendar";
 import Bar from "./Bar";
 
+import { ITeam, IDepartmentTeams } from '../types';
+
 class App {
-  constructor(rootElement) {
+  appElement: HTMLElement | null;
+  currentDate: Date
+  month: number
+  teams: ITeam[]
+
+
+  constructor(rootElement: HTMLElement | null) {
     this.appElement = rootElement;
     this.currentDate = new Date();
     this.month = new Date().getMonth();
     this.teams = [];
+
+    this.render()
   }
 
-  likeComponentDidMount = () => {
-    return getDataServer(TEAMS_URL).then(({ teams: teamsResponse }) => {
-      this.teams = teamsResponse;
+  protected likeComponentDidMount = (): Promise<any> => {
+    return getDataServer(TEAMS_URL).then(( { teams: teamsRes }: IDepartmentTeams) => {
+      this.teams = teamsRes;
     });
   };
 
-  prevMonth = () => {
+  protected prevMonth = (): void => {
     this.currentDate.setMonth(this.month - 1);
     this.update();
     if (this.month < 0) this.month = 11;
   };
 
-  nextMonth = () => {
+  protected nextMonth = (): void => {
     this.currentDate.setMonth(this.month + 1);
     this.update();
     if (this.month > 11) this.month = 0;
   };
 
-  update = () => {
-    this.appElement.innerHTML = "";
+  protected update = () => {
+    if (this.appElement) this.appElement.innerHTML = "";
 
     new Bar(this.appElement, this.currentDate, this.prevMonth, this.nextMonth).render();
     new Calendar(this.appElement, this.currentDate, this.teams).render();
   };
 
-  render = () => {
+  private render = () => {
     this.likeComponentDidMount().then(() => {
       new Bar(this.appElement, this.currentDate, this.prevMonth, this.nextMonth).render();
       new Calendar(this.appElement, this.currentDate, this.teams).render();

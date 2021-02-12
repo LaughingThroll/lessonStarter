@@ -2,6 +2,7 @@
   "name": "lesson-starter",
   "version": "1.0.0",
   "description": "",
+  
   "scripts": {
     "lint": "npm run lint:styles; npm run lint:scripts",
     "lint:styles": "stylelint src",
@@ -29,6 +30,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-standard": "^16.0.2",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",

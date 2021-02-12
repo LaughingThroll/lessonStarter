@@ -1,4 +1,6 @@
-const departmentTeams = {
+import { IDepartmentTeams } from './types'
+
+const departmentTeams: IDepartmentTeams = {
   teams: [
     {
       name: "Frontend Team",
