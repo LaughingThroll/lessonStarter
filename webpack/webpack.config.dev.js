@@ -34,6 +34,7 @@ module.exports = merge(common, {
         loader: 'eslint-loader',
         options: {
           emitWarning: true,
+          fix: true
         },
       },
       {
